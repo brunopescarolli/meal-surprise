@@ -1,0 +1,61 @@
+body{
+    background-color: #f5f5f5;
+}
+
+.footer-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Montserrat", sans-serif;
+    margin: 0% 10% 0% 10%;
+    padding: 20px 0px 20px 0px;
+}
+
+footer{
+    padding: 40px;
+}
+
+footer p{
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #303030;
+}
+
+hr{
+    margin: 0% 10% 0% 10%;
+    color: #303030;
+}
+
+.links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0px 40px;
+}
+
+@media only screen and (orientation: portrait){
+    .footer-content{
+        flex-direction: column;
+        margin: 0px;
+        align-items: start;
+    }
+
+    footer p{
+        margin-bottom: 15px;
+    }
+
+    .links{
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .links a{
+        margin: 5px 0px 5px 0px;
+    }
+
+    hr{
+        margin: 0%;
+    }
+}

@@ -1,0 +1,121 @@
+body{
+    align-items: center;
+    margin: 0% 11% 0% 11%;
+    font-family: "Montserrat", sans-serif;
+}
+
+body h2{
+    color:#656565;
+    opacity: 50%;
+    font-size: 0.8em;;
+    margin-top: 30px;
+}
+
+body h1{
+    font-weight: bold;
+    color: #2B2B2B;
+    font-size: 1.3em;
+    margin: 10px 0px 10px 0px;
+}
+
+.lupa{
+    width: 14px;
+    height: 14px;
+    opacity: 50%;
+    margin: 0px 0px 0px 5px;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    border: #2B2B2B 1px;
+    border-style: solid;
+    border-radius: 8px;
+    margin: 20px 0px 20px 0px;
+    padding: 3px;
+}
+
+.search button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+input{
+    border: none;
+    width: 100%;
+    padding: 10px;
+    
+}
+
+input::placeholder {
+    color:#656565;
+    opacity: 50%;
+  }
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.scrollmenu {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    align-items: center;
+    padding: 20px 0px 20px 0px;
+    scrollbar-width: 300px;
+  }
+  
+.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 10px 16px 10px 0px;
+    text-decoration: none;
+}
+
+.scrollmenu::-webkit-scrollbar{
+    background-color: transparent;
+}
+
+.scrollmenu::-webkit-scrollbar-thumb{
+    background-color:#2B2B2B;
+    border-radius: 20px;
+    border-top: 4px solid white;
+    border-bottom: 4px solid white;
+}
+
+.scrollmenu::-webkit-scrollbar-track{
+    background-color: #999999;
+    border-radius: 20px;
+    border: 4px solid white;
+}
+
+.scrollmenu::-webkit-scrollbar-button:single-button{
+    width: 430px;
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:decrement{ // esquerda
+    background: url(/Imagens/botao-scroll.png) no-repeat 97% 50%;
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:increment{ // direita
+    background: url(/Imagens/botao-scroll-direita.png) no-repeat 2% 50%;
+}
+
+.scrollmenu img{
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 3px;
+    width: 160px;
+    height: 120px;
+}
+
+.scrollmenu img:hover{
+    cursor: pointer;
+}
+
+@media only screen and (orientation: portrait){
+    body{
+        margin: 0% 6% 0% 6%;
+    }
+}

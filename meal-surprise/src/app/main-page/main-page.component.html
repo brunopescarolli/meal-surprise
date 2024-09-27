@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <h2>HI,</h2>
+        <h1>Search for your country</h1>
+        <div class="search">
+            <button><img class="lupa" src="/Imagens/lupa.png"></button>
+            <input  [formControl]="searchControl" placeholder="Search for Lunch">
+        </div>
+        <h1>or choose</h1>
+        <div class="scrollmenu">
+            <div *ngFor="let country of listCountries">
+                <a (click)="navCountryMeal(country.strCountryMeal)"><img [src]="country.strFlag" [alt]="country.strCountry"/></a>
+            </div>
+        </div>
+        <h1>{{ category }}</h1>
+        <div class="scrollmenu">
+            <div *ngFor="let meal of visibleMeals">
+                <a (click)="navMealInfo(meal.idMeal)"><img [src]="meal.strMealThumb" [alt]="meal.strMeal"/></a>
+            </div>
+        </div>
+    </body>
+</html>

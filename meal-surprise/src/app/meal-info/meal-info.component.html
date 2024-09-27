@@ -1,0 +1,59 @@
+<html>
+    <body>
+        <a href="/">
+        <div class="filter">
+            <img src="/Imagens/{{visibleMeals[0].strArea}}.png"/>
+            <p> > {{visibleMeals[0].strCategory}}</p>
+            <p> > {{visibleMeals[0].strMeal}}</p>
+            <p>X</p>
+        </div>
+        </a>
+        <h2>You chose</h2>
+        <h1>{{visibleMeals[0].strMeal}}</h1>
+        <div class="center">
+            <div class="card">
+                <img src={{visibleMeals[0].strMealThumb}}/>
+                <div>
+                    <img [src]="favorite ? '/Imagens/estrela.png' : '/Imagens/borda-estrela.png'" (click)="addFavorite(visibleMeals[0].idMeal, visibleMeals[0].strMealThumb, visibleMeals[0].strMeal)" [ngClass]="{'visible': favorite}"/>
+                </div>
+            </div>
+        </div>
+        <h2>Category</h2>
+        <h1>{{visibleMeals[0].strCategory}}</h1>
+        <hr>
+        <div class="info imgIng" (click)="moreIng()">
+            <h1>Ingredients</h1>
+            <img [ngClass]="{'rotated': !seeMoreIng}" src="/Imagens/botao-scroll.png" />
+        </div>
+        <hr>
+        <div class="ingredients">
+            <ul [ngClass]="{'visible': !seeMoreIng}" >
+                <li *ngFor="let ing of getMealIng(visibleMeals[0]); index as i">{{getMealIng(visibleMeals[0])[i]}}</li>
+            </ul>
+        </div>
+        <hr>
+        <div class="info imgIns" (click)="moreIns()">
+            <h1>Instructions</h1>
+            <img [ngClass]="{'rotated': !seeMoreIns}" src="/Imagens/botao-scroll.png" />
+        </div>
+        <hr>
+        <div class="instructions">
+            <p [ngClass]="{'visible': !seeMoreIns}" >
+                {{visibleMeals[0].strInstructions.replaceAll(".", '.\n')}}
+            </p>
+        </div>
+        <hr>
+        <div class="info imgVid" (click)="moreVid()">
+            <h1>Video</h1>
+            <img [ngClass]="{'rotated': !seeMoreVid}" src="/Imagens/botao-scroll.png" />
+        </div>
+        <hr>
+        <div class="video">
+            <iframe 
+                [ngClass]="{'visible': !seeMoreVid}"
+                [src]="getMealYT(visibleMeals[0].strYoutube.toString())"
+                >
+            </iframe>
+        </div>
+    </body>
+</html>

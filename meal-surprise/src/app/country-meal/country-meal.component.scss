@@ -1,0 +1,177 @@
+body{
+    align-items: center;
+    justify-content: c;
+    margin: 0% 11% 0% 11%;
+    font-family: "Montserrat", sans-serif;
+}
+
+body a{
+    text-decoration: none;
+    color: #2B2B2B;
+}
+
+body h2{
+    color:#656565;
+    opacity: 50%;
+    font-size: 0.8em;;
+    margin-top: 30px;
+}
+
+body h1{
+    font-weight: bold;
+    color: #2B2B2B;
+    font-size: 1.3em;
+    margin: 10px 0px 10px 0px;
+}
+
+.filter img{
+    width: 35px;
+    height: 25px;
+}
+
+.filter p{
+    margin: 0px 0px 0px 10px;
+}
+
+.filter:hover p{
+    cursor: pointer;
+}
+
+.filter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 30px 0px 0px 0px;
+}
+
+.lupa{
+    width: 14px;
+    height: 14px;
+    opacity: 50%;
+    margin: 0px 0px 0px 5px;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    border: #2B2B2B 1px;
+    border-style: solid;
+    border-radius: 8px;
+    margin: 20px 0px 20px 0px;
+    padding: 3px;
+}
+
+.search button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+input{
+    border: none;
+    width: 100%;
+    padding: 10px;
+    
+}
+
+input::placeholder {
+    color:#656565;
+    opacity: 50%;
+  }
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.lista {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 20px 10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 3px;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+.card img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
+
+.card div{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+
+.card div img{
+    width: 25px;
+    height: 25px;
+    border-radius: 0px;
+    align-self: flex-end;
+}
+
+.card div img.visible{
+    animation-name: star;
+    animation-duration: 1s;
+}
+
+.card div img:hover{
+    content:url("/Imagens/estrela.png");
+}
+
+@keyframes star{
+    0%  {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100%{transform: scale(1);}
+}
+
+.card div p{
+    font-weight: bold;
+    font-size: 1.5em;
+    align-items: start;
+    margin-left: 20px;
+    color: #2B2B2B;
+}
+
+.expandir{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2B2B2B;
+    margin-bottom: 30px;
+    transition: color 0.3s ease;
+}
+
+.expandir img{
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+    margin-left: 30px;
+}
+
+.expandir img.rotated{
+    transform: rotate(90deg);
+}
+
+.expandir:hover{
+    cursor: pointer;
+}
+
+
+@media only screen and (orientation: portrait){
+    .lista{
+        grid-template-columns: 1fr;
+    }
+}

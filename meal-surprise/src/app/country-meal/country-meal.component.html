@@ -1,0 +1,29 @@
+<body>
+    <a href="/">
+      <div class="filter">
+        <img src="/Imagens/{{country}}.png" />
+        <p>X</p>
+      </div>
+    </a>
+    <h2>HI,</h2>
+    <h1>Search your meal</h1>
+    <div class="search">
+      <button><img class="lupa" src="/Imagens/lupa.png" /></button>
+      <input [formControl]="searchControl" placeholder="Search for Lunch" />
+    </div>
+    <h1>or choose</h1>
+    <div class="lista">
+      <div *ngFor="let meal of listMeal.slice(0,aux)" class="card">
+        <img [src]="meal.strMealThumb" (click)="navMealInfo(meal.idMeal)"/>
+        <div>
+          <p (click)="navMealInfo(meal.idMeal)">{{ meal.strMeal }}</p>
+          <img [src]="isFavorite(meal.idMeal) ? '/Imagens/estrela.png' : '/Imagens/borda-estrela.png'" (click)="addFavorite(meal.idMeal, meal.strMealThumb, meal.strMeal)"/>
+        </div>
+      </div>
+    </div>
+    <div class="expandir" *ngIf="visibleMeals.length > 6" (click)="toggleMeals()">
+      <p>{{ showSeeMore ? 'see more meals' : 'Hide meals' }}</p>
+      <img [ngClass]="{ rotated: !showSeeMore }" src="/Imagens/botao-scroll.png" />
+    </div>
+  </body>
+  
